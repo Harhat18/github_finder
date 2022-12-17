@@ -1,40 +1,48 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export class Search extends Component {
-    constructor(props) {
-        super(props);
-        this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
-        this.state = {
-            keyword: ''
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.state = {
+      keyword: "",
+    };
+  }
 
-    onChange(e) {
-        this.setState({
-            keyword: e.target.value
-        })
-    }
+  onChange(e) {
+    this.setState({
+      keyword: e.target.value,
+    });
+  }
 
-    onSubmit(e) {
-        e.preventDefault();
-        console.log(this.state.keyword);
-    }
+  onSubmit(e) {
+    e.preventDefault();
+    this.props.searchUsers(this.state.keyword);
+    this.setState({ keyword: "" });
+  }
 
-    render() {
-        return (
-           <form onSubmit={this.onSubmit}>
-               <div className="container my-3">
-                <div className="input-group">
-                    <input type="text" onChange={this.onChange} className="form-control" />
-                    <div className="input-group-append">
-                        <button type="submit" className="btn btn-primary">Search</button>
-                    </div>
-                </div>
-               </div>
-           </form>
-        )
-    }
+  render() {
+    return (
+      <form onSubmit={this.onSubmit}>
+        <div className="container my-3">
+          <div className="input-group">
+            <input
+              type="text"
+              onChange={this.onChange}
+              className="form-control"
+              value={this.state.keyword}
+            />
+            <div className="input-group-append">
+              <button type="submit" className="btn btn-primary">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    );
+  }
 }
 
-export default Search
+export default Search;
