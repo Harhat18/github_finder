@@ -1,4 +1,5 @@
 # React eğitimim sürecinde yaptığımız github_finder adlı projemiz
 
-Uploading Video_22-12-18_21-03-27.mov…
+https://user-images.githubusercontent.com/111196660/208312360-e7042cfc-bae6-42c8-8fb9-b0d8e0d4c125.mov
+
 
